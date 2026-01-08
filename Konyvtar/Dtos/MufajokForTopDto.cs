@@ -1,6 +1,6 @@
 ﻿namespace Konyvtar.Dtos
 {
-    public class MufajokForTop
+    public class MufajokForTopDto
     {
         public string Mufaj {  get; set; }
     }
