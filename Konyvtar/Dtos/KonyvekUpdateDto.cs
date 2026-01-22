@@ -2,8 +2,10 @@
 
 namespace Konyvtar.Dtos
 {
-    public class KonyvekCreateDto
+    public class KonyvekUpdateDto
     {
+        [Required]
+        public int Id { get; set; }
         [Required]
         [MaxLength(200)]
         public string Cim_hun { get; set; }
@@ -34,5 +36,6 @@ namespace Konyvtar.Dtos
         public List<int> MufajIdk { get; set; } = new();
         [Required]
         public List<int> SzerzoIdk { get; set; } = new();
+        public bool Aktiv { get; set; } = true;
     }
 }

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Konyvtar.Dtos
 {
-    public class KonyvekDto
+    public class KonyvekReadDto
     {
         [Required]
         public int Id { get; set; }
@@ -25,11 +25,18 @@ namespace Konyvtar.Dtos
         public int Szpeldany { get; set; }
         [Required]
         public string Kiado { get; set; }
-        [Required]
+
+        /*[Required]
         public string Mufaj { get; set; }
-        public string Szerzo { get; set; }
+        public string Szerzo { get; set; }*/
+
+        public List<MufajokForTopDto> Mufajok { get; set; } = new();
+        public List<SzerzokForTopDto> Szerzok { get; set; } = new();
+
         [Required]
         public int Max_kolcsonzes { get; set; }
         public bool Aktiv { get; set; }
+        public DateTime Letrehozva { get; set; }
+        public DateTime Modositva { get; set; }
     }
 }
