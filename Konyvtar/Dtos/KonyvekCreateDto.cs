@@ -13,7 +13,7 @@ namespace Konyvtar.Dtos
         [MinLength(30)]
         public string Ajanlo { get; set; }
         [Required]
-        [MaxLength(200)]
+       
         public int Kiadas_eve { get; set; }
         [Required]
         public int Peldanyszam { get; set; }

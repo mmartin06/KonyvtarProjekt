@@ -11,7 +11,7 @@ namespace Konyvtar.Models
         public ICollection<Szerzokonyvek> Szerzokonyvek { get; set; } = new List<Szerzokonyvek>();
         public string Nev { get; set; }
         public DateTime Szul_ido { get; set; }
-        public DateTime Szul_hely { get; set; }
+        public string Szul_hely { get; set; }
         public string Ismerteto { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Konyvtar.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Konyvtar.Migrations
 {
     [DbContext(typeof(KonyvtarContext))]
-    partial class KonyvtarContextModelSnapshot : ModelSnapshot
+    [Migration("20260122123151_szul_hely_fix")]
+    partial class szul_hely_fix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -138,8 +141,16 @@ namespace Konyvtar.Migrations
                     b.Property<DateTime>("Modositva")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<string>("Mufaj")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<int>("Peldanyszam")
                         .HasColumnType("int");
+
+                    b.Property<string>("Szerzo")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<int>("Szpeldany")
                         .HasColumnType("int");
